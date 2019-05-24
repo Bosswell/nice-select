@@ -25,6 +25,7 @@
             if ($option.data('value') === 'showInput') {
                 $('#nice-select-active-text').html('<input type="number" name="nice-select" id="nice-select-quantity" min="1">').unbind('click');
                 $('.nice-option, #nice-select-active-value').remove();
+                $('#nice-select-quantity').focus();
             }
         });
 
