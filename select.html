@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Nice select</title>
+    <link rel="stylesheet" href="nice-select.css">
+</head>
+<body>
+
+<select id="nice-select" name="nice-select">
+    <option class="nice-option" value="1">1</option>
+    <option class="nice-option" value="2">2</option>
+    <option class="nice-option" value="3">3</option>
+    <option class="nice-option" value="4" data-default="true">4</option>
+    <option class="nice-option" value="5">5</option>
+    <option class="nice-option" value="showInput">5+</option>
+</select>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="select.js"></script>
+<script>
+    $(function () {
+
+        new NiceSelect(function ($option) {
+            if ($option.data('value') === 'showInput') {
+                $('#nice-select-active-text').html('<input type="number" name="nice-select" id="nice-select-quantity" min="1">').unbind('click');
+                $('.nice-option, #nice-select-active-value').remove();
+            }
+        });
+
+        $(document).on('keypress', '#nice-select-quantity', function (e) {
+            if (($(this).val().length > 2
+                && e.keyCode !== 46
+                && e.keyCode !== 8)
+                || e.keyCode === 45
+            ) {
+                e.preventDefault();
+            }
+        })
+    })
+</script>
+</body>
+</html>

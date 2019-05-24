@@ -1,0 +1,54 @@
+#nice-select {
+    display: none;
+    margin-top: 10px;
+    width: 40px;
+    border: 1px solid #0005;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+}
+
+.nice-option {
+    display: none;
+}
+
+#nice-select[data-is-toggled="true"] #nice-select-active-text  {
+    border-bottom: 1px solid #0005;
+}
+
+#nice-select-active-text {
+    padding: 10px 0;
+}
+
+.nice-option {
+    border-bottom: 1px solid #0005;
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px 0;
+}
+
+.nice-option:last-child {
+    border: none;
+    padding-bottom: 10px;
+}
+
+#nice-select-quantity {
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+
+#nice-select-quantity:focus {
+    outline: none;
+}
+
+#nice-select-quantity::-webkit-outer-spin-button,
+#nice-select-quantity::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+#nice-select-quantity {
+    -moz-appearance:textfield; /* Firefox */
+}
